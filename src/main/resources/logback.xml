@@ -1,0 +1,20 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%d{HH:mm:ss}] %boldRed([%thread]) %boldBlue([%logger{36}]) %boldYellow(%level) - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILEOUT" class="ch.qos.logback.core.FileAppender">
+        <file>./server.log</file>
+        <append>false</append>
+        <encoder>
+            <pattern>[%d{HH:mm:ss}] [%thread] [%logger{36}] %level - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILEOUT"/>
+    </root>
+</configuration>
